@@ -1,0 +1,29 @@
+<h2>Formulario de envío</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form #f="ngForm" name="shipping-form">
+      <div class="form-group">
+        <label for="nombreDestinatario">Nombre Destinatario</label>
+        <input type="text" name="nombreDestinatario" id="nombreDestinatario" #nombreDestinatario="ngModel" [(ngModel)]="model.nombreDestinatario" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <label for="direccion1">Direccion 1</label>
+        <input type="text" name="direccion1" id="direccion1" #direccion1="ngModel" [(ngModel)]="model.direccion1" class="form-control" placeholder="Direccion 1">
+      </div>
+      <div class="form-group">
+        <label for="direccion2">Direccion 2</label>
+        <input type="text" name="direccion2" id="direccion2" #direccion2="ngModel" [(ngModel)]="model.direccion2" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" id="ciudad" name="ciudad" #ciudad="ngModel" [(ngModel)]="model.ciudad">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <app-shopping-cart-summary></app-shopping-cart-summary>
+  </div>
+</div>

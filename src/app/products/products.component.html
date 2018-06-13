@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3">
+      <app-product-filter></app-product-filter>
+  </div>
+  <div class="col-md-9">
+      <div class="row">
+        <ngb-pagination [collectionSize] ="filteredProducts.length" [(page)]="page" size="lg" directionLinks="false"></ngb-pagination>
+      </div>
+      <div class="row">
+          <ng-container *ngFor="let p of filteredProducts | slice:(page-1)*10:page*10">
+              <div class="col">
+                  <app-product-card [product]="p"></app-product-card>        
+              </div>
+              <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+          </ng-container>
+      </div>
+  </div>
+</div>

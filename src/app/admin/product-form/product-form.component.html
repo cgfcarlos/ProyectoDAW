@@ -1,0 +1,35 @@
+<h2>{{ 'Producto' }}</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form name="product-form" id="product-form" #f="ngForm">
+      <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input type="text" placeholder="titulo" name="titulo" id="titulo" #titulo="ngModel" [(ngModel)]="model.titulo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="categoria">categoria</label>
+        <select name="categorias" id="categorias" #categoria="ngModel" [(ngModel)]="model.categoria" class="form-control">
+          <!-- Recorrer todas las categorias -->
+          <option value="x">
+            {{ 'TituloCategoria' }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="number" class="form-control" name="precio" id="precio" #precio="ngModel" [(ngModel)]="model.precio"> 
+      </div>
+      <div class="form-group">
+        <label for="imgProducto">Imagen</label>
+        <input type="url" placeholder="Url imagen" class="form-control" name="imgProducto" id="imgProducto" #imgProducto="ngModel" [(ngModel)]="model.imgProducto">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+        <button type="button" class="btn btn-danger">Borrar</button> 
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+</div>
